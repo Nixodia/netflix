@@ -1,0 +1,84 @@
+#include <stdio.h>
+#define NUM_NAZIONI 85
+#define NUM_GENERI 28
+#define NUM_EMAIL 6
+#define NUM_COGNOME 50
+
+
+
+typedef struct {
+	unsigned int giorno;
+	unsigned int mese;
+	unsigned int anno;
+}data;
+
+typedef struct {
+	char nome;
+	char cognome;
+	char email;
+	char utente[15];
+	data data_nascita;
+	data data_iscrizione;
+}account;
+
+typedef struct {
+	char titolo[20];
+	char genere;
+	char nazione[20];
+	unsigned int anno_uscita;
+	unsigned int durata;
+	char regista[20];
+	char *attori[10];
+}film;
+
+
+
+
+
+
+
+int main(){
+	char *nome[NUM_NOME] = {};
+
+	char *cognome[NUM_COGNOME] = {
+			"Rossi", "Russo", "Ferrari", "Esposito", "Bianchi",	"Romano", "Colombo", "Ricci", "Marino",	"Greco",
+			"Bruno", "Gallo", "Conti", "De Luca", "Mancini", "Costa", "Giordano", "Rizzo", "Lombardi", "Moretti",
+			"Barbieri",	"Fontana", "Santoro", "Mariani", "Rinaldi", "Caruso", "Ferrara", "Galli", "Martini", "Leone",
+			"Longo", "Gentile", "Vitale", "Lombardo", "Serra",	"Coppola",	"De Santis", "Messina",  "Marchetti",
+			"Parisi", "Villa", "Conte", "Ferraro", "Ferri", "Fabbri", "Bianco", "Marini", "Grasso", "Valentini"};
+
+	char *posta_elettronica[NUM_EMAIL] = {"@gmail.com", "@yahoo.com", "@outlook.com", "@tiscali.com", "@virgilio.com", "@mail.com"};
+
+	char *nazione_film[NUM_NAZIONI] = {"Usa", "Italia","Francia", "Gran Bretagna","Germania","Canada",
+							"Giappone", "Cina", "Belgio", "Spagna", "Corea Del Sud", "Svizzera",
+							"Brasile", "Argentina", "India", "Svezia", "Danimarca", "Austria",
+							"Messico", "Russia", "Australia", "Polonia", "Norvegia", "Ungheria",
+							"Paesi Bassi", "Turchia", "Qatar", "Israele", "Repubblica Ceca", "Portogallo",
+							"Lussemburgo", "Sudafrica", "Iran", "Islanda", "Libano", "Taiwan",
+							"Romania", "Croazia", "Lituania", "Hong Kong", "Irlanda", "Grecia",
+							"Uruguay", "Serbia", "Bulgaria", "Finlandia", "Filippine", "Cile",
+							"Marocco", "Malesia", "Tailandia", "Ucraina", "Siria", "Egitto",
+							"Tunisia", "Palestina", "Bosnia-Herzegovina", "Singapore", "Nuova Zelanda", "Cipro",
+							"Georgia", "Kenya", "Kazakhistan", "Colombia", "Indonesia", "Slovenia",
+							"Giordania", "Senegal", "Montenegro", "Slovacchia", "Congo", "Repubblica Dominicana",
+							"Cuba", "Guatemala", "Armenia", "Cambogia", "Estonia", "Pakistan",
+							"Sudan", "Macedonia", "Birmania", "Iraq", "Sri Lanka", "Emirati Arabi",
+							"Algeria"};
+
+	char *generi[NUM_GENERI] ={"Animazione", "Avventura", "Biografico", "Commedia", "Documentario", "Drammatico"
+					"Erotico", "Fantascienza", "Fantastico", "Guerra", "Horror", "Musical"
+					"Storico", "Thriller", "Western", "Catastrofico", "Comico", "Epico"
+					"Giallo", "Grottesco", "Mitologico", "Noir", "Politico", "Poliziesco"
+					"Religioso", "Sentimentale", "Spionaggio", "Sportivo"};
+
+
+
+	FILE *file;
+
+	if((file = fopen("Netflix.txt", "rb+")) == "NULL"){
+		puts("Errore nell'apertura");
+	}
+	else{
+		puts("File trovato");
+	}
+}
